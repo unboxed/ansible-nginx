@@ -149,6 +149,14 @@ nginx_spdy_enabled: true
 # Configure server_names_hash_bucket_size
 nginx_names_hash_bucket_size: 32
 
+# What should X-Forwarded-Proto be set to? By default, X-Forwarded-Proto will be
+# set to the scheme of the incoming request (http or https). However, if you are
+# doing SSL termination on another box, or passing the request through a sequence
+# of proxies, you may need to set this to "$http_x_forwarded_proto" so as to
+# forward on the upstream value. Note that this could lead to security holes if
+# you are not careful.
+nginx_x_forwarded_proto_value: "$scheme"
+
 ```
 
 ## Example playbook without ssl

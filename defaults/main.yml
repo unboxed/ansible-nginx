@@ -45,6 +45,10 @@ nginx_ssl_strict_transport_header_age: 15768000
 nginx_ssl_session_cache: shared:SSL:10m
 nginx_ssl_session_timeout: 10m
 
+# What to set the x-forwarded-proto value to. This can be overriden to https
+# if required
+nginx_x_forwarded_proto_value: "$scheme"
+
 nginx_ssl_manage_certs: true
 nginx_ssl_local_path: /home/yourname/dev/testproject/secrets
 nginx_ssl_cert_name: sslcert.crt
